@@ -1,0 +1,15 @@
+function toolTipForItems(field){
+				try {
+					var items = #{yourController.jsList};
+					if(field != null){
+						for(var i = 0; i< field.options.length; i++){
+							if(i!=0){
+								field[i].title = items[i-1];
+							}
+						}
+					}
+					return true;
+				} catch (e) {
+					return e;
+				}
+			}
